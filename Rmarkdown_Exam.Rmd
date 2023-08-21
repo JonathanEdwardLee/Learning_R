@@ -1,0 +1,34 @@
+---
+title: "RMarkdown Example"
+author: "Jonathan Lee"
+date: "2023-08-21"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown Example
+
+This is an example of using R Markdown to build reports to share that show my work and the visuals.
+
+```{r penguins}
+install.packages("ggplot2")
+install.packages("palmerpenguins")
+library(ggplot2)
+library(palmerpenguins)
+
+```
+
+## Including Plots
+
+I can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+ggplot(data=penguins)+
+  geom_point(mapping=aes(x=bill_length_mm, y=body_mass_g, color=species))+
+  facet_grid(sex~species)
+```
+
+Thank you for your time.
